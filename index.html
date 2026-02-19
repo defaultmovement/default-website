@@ -1,198 +1,290 @@
-<!DOCTYPE HTML>
-<!--
-  Dimension by HTML5 UP
-  html5up.net | @ajlkn
-  Free for personal and commercial use under the CCA 3.0 license
--->
-<html>
-  <head>
-    <title>default.</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
-  <body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>default.</title>
 
-    <!-- Wrapper -->
-      <div id="wrapper">
+<style>
+@font-face {
+  font-family: 'Söhne';
+  src: url('https://yourcdn.com/sohne.woff2') format('woff2');
+  font-weight:400;
+  font-style:normal;
+}
 
-        <!-- Header -->
-          <header id="header">
-            <div class="content">
-              <div class="inner">
-                <h1>default.</h1>
-                <p>training the body’s basic functions</p>
-              </div>
-            </div>
-            <nav>
-              <ul>
-                <li><a href="#what">What</a></li>
-                <li><a href="#how">How</a></li>
-                <li><a href="#practice">Practice</a></li>
-                <li><a href="#self">Self</a></li>
-                <li><a href="#who">Who</a></li>
-                <li><a href="#format">Format</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </nav>
-          </header>
+*{ margin:0; padding:0; box-sizing:border-box;}
+html, body{
+  height:100%;
+  background: linear-gradient(to bottom, #0a0a0a, #111111);
+  color:#f2f2f2;
+  font-family:"Söhne", sans-serif;
+  overflow:hidden;
+}
 
-        <!-- Main -->
-          <div id="main">
+.scroll-container{
+  height:100vh;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+  scroll-behavior:smooth;
+}
 
-            <!-- What -->
-              <article id="what">
-                <h2 class="major">What</h2>
-                <p>
-                  default is not a new method.
-                  <br><br>
-                  It is a return to what the body already knows
-                  before comfort, inactivity, and habits
-                  reduce its capabilities.
-                  <br><br>
-                  It does not train isolated muscles.<br>
-                  It trains functions.
-                  <br><br>
-                  Strength, mobility, coordination, balance, breathing
-                  work together, as they should.
-                </p>
-              </article>
+/* SECTION */
+section{
+  height:100vh;
+  scroll-snap-align:center;
+  scroll-snap-stop:always;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:0 2rem;
+}
 
-            <!-- How -->
-              <article id="how">
-                <h2 class="major">How</h2>
-                <p>
-                  Sessions last no more than 45 minutes.
-                  <br><br>
-                  No session is ever the same.
-                  Exercises may look similar,
-                  intensity adapts to the person.
-                </p>
-                <p>
-                  The work is based on:
-                </p>
-                <ul>
-                  <li>time under tension</li>
-                  <li>quality of execution</li>
-                  <li>nasal breathing only</li>
-                  <li>control before fatigue</li>
-                </ul>
-                <p>
-                  The last repetition
-                  must be equal to or better than the first.
-                </p>
-              </article>
+/* CONTAINER TESTI */
+.container{
+  max-width:720px;
+  text-align:center;
+  z-index:2;
+}
 
-            <!-- Practice -->
-              <article id="practice">
-                <h2 class="major">Practice</h2>
-                <p>
-                  Work happens on the ground and standing.<br>
-                  In quadruped positions.<br>
-                  In suspension.
-                  <br><br>
-                  With bodyweight and minimal tools.<br>
-                  Rings, rope, kettlebell, bodyweight.
-                  <br><br>
-                  Slow movements.<br>
-                  Explosive movements.<br>
-                  Continuous movement.
-                  <br><br>
-                  Strength, mobility, and flow in the same session.
-                  <br><br>
-                  Some days you push.<br>
-                  Some days you explore.<br>
-                  Some days you recover by moving.
-                  <br><br>
-                </p>
-              </article>
+/* TITOLI */
+h1{
+  font-size:clamp(2.8rem,5vw,4rem);
+  font-weight:600;
+  text-transform:lowercase;
+  margin-bottom:1.5rem;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .9s ease;
+}
+h1.visible{ opacity:1; transform:translateY(0);}
+h1 .dot{ font-family:Georgia, serif; font-size:1.2em; vertical-align:super; }
 
-            <!-- Self -->
-              <article id="self">
-                <h2 class="major">Self-assessment</h2>
-                <p>
-                  default requires attention.
-                  <br><br>
-                  You do not follow instructions blindly.
-                  You learn to assess:
-                </p>
-                <ul>
-                  <li>how you breathe</li>
-                  <li>how you move</li>
-                  <li>when to stop</li>
-                  <li>when to push</li>
-                </ul>
-                <p>
-                  The goal is not endurance.
-                  <br><br>
-                  The goal is sensing
-                  what works and what doesn’t.
-                </p>
-              </article>
+h2{
+  font-size:clamp(1.8rem,3vw,2.4rem);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:1.5rem;
+  font-weight:600;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .9s ease;
+}
+h2.visible{ opacity:1; transform:translateY(0); }
 
-            <!-- Who -->
-              <article id="who">
-                <h2 class="major">Who</h2>
-                <p>default is for people who:</p>
-                <ul>
-                  <li>have experienced pain or stiffness</li>
-                  <li>putting quality > quantity</li>
-                  <li>want to move better, for longer</li>
-                </ul>
-                <p>It is not for those who:</p>
-                <ul>
-                  <li>look for shortcuts</li>
-                  <li>just want to sweat</li>
-                  <li>delegate everything to someone else</li>
-                </ul>
-              </article>
+/* TESTI */
+p, li{
+  font-size:clamp(1rem,1.4vw,1.15rem);
+  line-height:1.9;
+  font-weight:300;
+  margin-bottom:1rem;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .9s ease;
+}
+p.visible, li.visible{ opacity:1; transform:translateY(0); }
 
-            <!-- Format -->
-              <article id="format">
-                <h2 class="major">Format</h2>
-                <p>
-                  Sessions are in person.<br>
-                  One-to-one or small groups.
-                  <br><br>
-                  It is not an online course.<br>
-                  It is not a format.<br>
-                  It is not the same for everyone.
-                  <br><br>
-                  It is practice, presence, and continuity.
-                </p>
-              </article>
+ul{ list-style:none; margin:1rem 0; }
 
-            <!-- Contact -->
-              <article id="contact">
-                <h2 class="major">default.</h2>
-                <p>restoring your body basic functions</p>
-                <p>
-                 <a href="https://calendly.com/default-movement/30min">Let's start</a>
-                </p>
-              </article>
+/* LINK */
+a{
+  text-decoration:none;
+  color:white;
+  border-bottom:2px solid rgba(255,255,255,0.3);
+  transition:all .3s ease;
+  font-weight:500;
+}
+a:hover{ border-color:white; transform:scale(1.05); }
 
-          </div>
+/* SEMICERCHI CHE RIPRENDONO IL GRADIENTE DELLO SFONDO */
+.semi {
+  position:absolute;
+  width:200px;
+  height:200px;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .6s ease;
+  z-index:1;
+  background: linear-gradient(to bottom, #0a0a0a, #111111); /* stesso gradiente dello sfondo */
+  animation:semiPulse 6s ease-in-out infinite alternate;
+}
 
-        <!-- Footer -->
-          <footer id="footer">
-            <p class="copyright">
-              &copy; default. Design: <a href="https://html5up.net">HTML5 UP</a>.
-            </p>
-          </footer>
+/* visibili */
+.semi.visible {
+  opacity:1;
+}
 
-      </div>
+/* POSIZIONI SEMICERCHI PER SEZIONE */
+section:nth-child(2) .semi{ top:-100px; left:50%; transform:translateX(-50%); clip-path: ellipse(50% 50% at 50% 100%); }
+section:nth-child(3) .semi{ bottom:-100px; left:50%; transform:translateX(-50%); clip-path: ellipse(50% 50% at 50% 0%); }
+section:nth-child(4) .semi{ right:-100px; top:50%; transform:translateY(-50%); clip-path: ellipse(50% 50% at 0% 50%); }
+section:nth-child(5) .semi{ left:-100px; top:50%; transform:translateY(-50%); clip-path: ellipse(50% 50% at 100% 50%); }
+section:nth-child(6) .semi{ top:-100px; left:50%; transform:translateX(-50%); clip-path: ellipse(50% 50% at 50% 100%); }
+section:nth-child(7) .semi{ top:-100px; left:50%; transform:translateX(-50%); clip-path: ellipse(50% 50% at 50% 100%); }
 
-    <!-- BG -->
-      <div id="bg"></div>
+/* PULSARE GRADUALE */
+@keyframes semiPulse {
+  0% { opacity:0.02; transform: scale(1); }
+  50% { opacity:0.035; transform: scale(1.03); }
+  100% { opacity:0.02; transform: scale(1); }
+}
 
-    <!-- Scripts -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/browser.min.js"></script>
-      <script src="assets/js/breakpoints.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script>
+/* SCROLL INDICATOR */
+.scroll-indicator{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  width:24px;
+  height:40px;
+  border:2px solid rgba(255,255,255,.3);
+  border-radius:12px;
+  display:flex;
+  justify-content:center;
+  padding-top:5px;
+  z-index:100;
+}
+.scroll-indicator span{
+  width:4px;
+  height:8px;
+  background:white;
+  border-radius:2px;
+  animation:scrollAnim 1.4s infinite;
+}
+@keyframes scrollAnim{
+  0%{opacity:0; transform:translateY(0);}
+  50%{opacity:1; transform:translateY(12px);}
+  100%{opacity:0; transform:translateY(0);}
+}
+</style>
+</head>
+<body>
 
-  </body>
+<div class="scroll-indicator"><span></span></div>
+<div class="scroll-container">
+
+<section>
+  <div class="container">
+    <h1>default<span class="dot">.</span></h1>
+    <p>restoring the body's default functions</p>
+  </div>
+</section>
+
+<section>
+  <div class="semi"></div>
+  <div class="container">
+    <h2>WHAT</h2>
+    <p>Default is not a new method.</p>
+    <p>It is a return to what the body already knows before comfort, inactivity, and habits reduce its capabilities.</p>
+    <p>It does not train isolated muscles.</p>
+    <p>It restores integrated functions.</p>
+    <p>Strength, mobility, coordination, balance, breathing work together, as they should.</p>
+  </div>
+</section>
+
+<section>
+  <div class="semi"></div>
+  <div class="container">
+    <h2>HOW</h2>
+    <p>Sessions last no more than 45 minutes.</p>
+    <p>No session is ever the same. Exercises may look similar, intensity adapts to the person.</p>
+    <p>The work is based on:</p>
+    <ul>
+      <li>time under tension (TUT)</li>
+      <li>quality of execution (TUA)</li>
+      <li>nasal breathing only</li>
+      <li>control before fatigue</li>
+    </ul>
+    <p>Timed sets are containers.</p>
+    <p>What happens inside — quality, focus, control — determines the work.</p>
+    <p>The last repetition must be equal to or better than the first.</p>
+  </div>
+</section>
+
+<section>
+  <div class="semi"></div>
+  <div class="container">
+    <h2>PRACTICE</h2>
+    <p>Work happens on the ground and standing.</p>
+    <p>In quadruped positions. In suspension.</p>
+    <p>With bodyweight and minimal tools — rings, rope, kettlebell.</p>
+    <p>Slow movements. Explosive movements. Continuous movement.</p>
+    <p>Strength, mobility, and flow in the same session.</p>
+    <p>Some days you push. Some days you explore. Some days you recover by moving.</p>
+  </div>
+</section>
+
+<section>
+  <div class="semi"></div>
+  <div class="container">
+    <h2>SELF-ASSESSMENT</h2>
+    <p>Default requires attention.</p>
+    <p>You do not follow instructions blindly.</p>
+    <p>You learn to assess:</p>
+    <ul>
+      <li>how you breathe</li>
+      <li>how you move</li>
+      <li>when to stop</li>
+      <li>when to push</li>
+    </ul>
+    <p>The goal is not endurance.</p>
+    <p>The goal is sensing what works and what doesn’t.</p>
+    <p>Self-assessment is the foundation of TUA.</p>
+  </div>
+</section>
+
+<section>
+  <div class="semi"></div>
+  <div class="container">
+    <h2>WHO</h2>
+    <p>Default is for people who:</p>
+    <ul>
+      <li>have experienced pain or stiffness</li>
+      <li>value quality over quantity</li>
+      <li>want to move better, for longer</li>
+    </ul>
+    <p>It is not for those who:</p>
+    <ul>
+      <li>look for shortcuts</li>
+      <li>just want to sweat</li>
+      <li>delegate everything to someone else</li>
+      <li>want to be entertained</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="semi"></div>
+  <div class="container">
+    <h1>default<span class="dot">.</span></h1>
+    <p><a href="https://calendly.com/default-movement/30min" target="_blank">Book a first session</a></p>
+  </div>
+</section>
+
+</div>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const items=entry.target.querySelectorAll("h1,h2,p,li,.semi");
+    if(entry.isIntersecting){
+      items.forEach((el,i)=>{
+        setTimeout(()=>el.classList.add("visible"),i*80)
+      });
+    } else {
+      items.forEach(el=>el.classList.remove("visible"));
+    }
+  });
+},{threshold:0.4});
+
+document.querySelectorAll("section").forEach(s=>observer.observe(s));
+
+window.addEventListener("load",()=>{
+  const title=document.querySelector("h1");
+  setTimeout(()=>title.classList.add("visible"),300);
+});
+</script>
+
+</body>
 </html>
-
